@@ -137,6 +137,7 @@ public class FileIndexTree implements Serializable {
 			ArrayList<FunctionY> functionList = new ArrayList<FunctionY>();
 			for (int i = 0; i < score.length; i++) {
 				FunctionY funcy = new FunctionY(Double.parseDouble(score[i]), 3, 5, 7, 200);
+				//这里funcy是一个类，它把传入的变量私有化，其他人不可访问，但是可以调用aoppf
 				score[i] = String.valueOf(BigDecimalUtil.round(
 						Helper.aoppf(Double.parseDouble(score[i]), Helper.BKDRHash("S151000904", 31), 3, 5, 7, 200),
 						4));
